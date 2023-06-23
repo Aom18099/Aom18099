@@ -8,12 +8,18 @@ params: any;
 
 }
 
+function delay(timeout: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, timeout);
+  });
+}
+
 export default async function MovieDetail({params}: Props) {
-    // const key = process.env.NEXT_PUBLIC_API_KEY;
+    const key = process.env.NEXT_PUBLIC_API_KEY;
 const { id } = params;
 const imagePath="http://image.tmdb.org/t/p/original";
 const data = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=d4765a4c7338ac22abc84d1daf8ba322`,
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`,
     {next: {revalidate:10}}
 );
 const res = await data.json();
@@ -41,8 +47,3 @@ await delay(2000);
 
   )
 }
-function delay(timeout: number) {
-    return new Promise((resolve) => {
-      setTimeout(resolve, timeout);
-    });
-  }
