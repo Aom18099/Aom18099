@@ -7,9 +7,9 @@ const data = await fetch(url)
 const res =await data.json()
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h4 className='text-4xl'>โปรแกรมแสดงโปสเตอร์หนัง</h4>
-      <div>
+    <main >
+      <h1 className='text-2xl'>โปรแกรมแสดงโปสเตอร์หนัง</h1>
+      <div className="grid gap-2 grid-cols-3">
         {res.results.map((movie: any) =>(
         <Movie
           key={movie.id}

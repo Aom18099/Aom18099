@@ -18,7 +18,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar/>
-        {children}
+
+        <div className='container mx-auto mt-7'>
+          {children}
+        </div>
+        
         <footer>
           <h4 className="flex min-h-screen flex-col items-center justify-between p-24">พัฒนาโดย ชาติ</h4>
         </footer>
