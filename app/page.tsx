@@ -5,6 +5,7 @@ export default async function Home() {
   const url ="https://api.themoviedb.org/3/movie/popular?api_key=d4765a4c7338ac22abc84d1daf8ba322"
 const data = await fetch(url)
 const res =await data.json()
+await delay(2000);
 
   return (
     <main >
@@ -22,8 +23,22 @@ const res =await data.json()
       </div>
     
     
+
+
+
+
+
+
+
     </main>   
-
-
   )
+} 
+function delay(timeout: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, timeout);
+  });
 }
+
+  
+
+  
